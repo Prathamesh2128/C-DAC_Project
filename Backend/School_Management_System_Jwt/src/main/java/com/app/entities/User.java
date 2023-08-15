@@ -29,7 +29,7 @@ import lombok.ToString;
 @ToString
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "user_type")
+@DiscriminatorColumn(name = "user_role")
 @Table(name = "users_jpa")
 public class User{
 	@Id
