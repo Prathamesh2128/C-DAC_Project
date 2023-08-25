@@ -1,35 +1,34 @@
-package com.app.filters;
+package com.app.security_jwt;
 
 import java.io.IOException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import com.app.jwt_utils.JwtUtils;
+import com.app.service.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Component
-public class JwtRequestFilter extends OncePerRequestFilter {
-	// auto wire JWT util's
-	@Autowired
-	private JwtUtils jwtUtils;
-	// auto wire DAO based user details service
-	
-	@Autowired
-	private UserDetailsService userDetailsService;
+public class AuthTokenFilter extends OncePerRequestFilter {
+  @Autowired
+  private JwtUtils jwtUtils;
+
+  @Autowired
+  private UserDetailsServiceImpl userDetailsService;
+
+  private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		try {
-			System.out.println("in filter ");
+			System.out.println(getClass() +"and in filter ");
 			String authHeader = request.getHeader("Authorization");
 			if (authHeader != null && authHeader.startsWith("Bearer ")) {
 				System.out.println("contains JWT " + authHeader);
@@ -57,4 +56,3 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 		}
 	}
 }
-

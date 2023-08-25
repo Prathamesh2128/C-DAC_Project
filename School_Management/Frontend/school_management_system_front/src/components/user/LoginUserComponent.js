@@ -7,13 +7,14 @@ import AuthService from "../../service/auth-service";
 
 const required = value => {
     if (!value) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                This field is required!
-            </div>
-        );
+      return (
+        <div className="alert alert-danger" role="alert">
+          This field is required!
+        </div>
+      );
     }
-};
+  };
+  
 
 class Login extends Component {
     constructor(props) {

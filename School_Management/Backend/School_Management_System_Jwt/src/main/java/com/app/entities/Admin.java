@@ -4,23 +4,28 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+@Entity
 @DiscriminatorValue(value = "admin")
 @PrimaryKeyJoinColumn(name = "user_id")
-@Entity
 @Table(name = "admin")
-public class Admin extends User{
+public class Admin extends User {
 	private String instituteName;
-	
 	private String adharNo;
+
+	public String getInstituteName() {
+		return instituteName;
+	}
+
+	public void setInstituteName(String instituteName) {
+		this.instituteName = instituteName;
+	}
+
+	public String getAdharNo() {
+		return adharNo;
+	}
+
+	public void setAdharNo(String adharNo) {
+		this.adharNo = adharNo;
+	}
 }

@@ -7,6 +7,8 @@ import Login from './components/user/LoginUserComponent';
 import LoginHomeComponent from './components/LoginHomeComponent';
 import AcademicsComponent from './components/AcademicsComponent';
 import InfraStructureComponent from './components/InfraStructureComponent';
+import AboutComponent from './components/AboutComponent';
+import ContactComponent from './components/ContactComponent';
 import '../src/components/Home.css'
 
 class App extends Component {
@@ -21,6 +23,8 @@ class App extends Component {
             <Route path="/home" exact component={LoginHomeComponent} />
             <Route path="/academics" component={AcademicsComponent} />
             <Route path="/infrastructure" component={InfraStructureComponent} />
+            <Route path="/about" component={AboutComponent} />
+            <Route path="/contact" component={ContactComponent} />
           </Switch>
         </Router>
       </div>

@@ -9,24 +9,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Entity
 @Table(name = "roles_jpa")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Role {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
 	private UserRoles userRole;
+
+	public Role(UserRoles name) {
+		this.userRole = name;
+	}
 }
