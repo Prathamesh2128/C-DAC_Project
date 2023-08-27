@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
-import { RiParentFill, RiAwardFill, RiFacebookBoxFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeFill } from 'react-icons/ri';
-import { BiBuildings, BiFootball, BiMap, BiLink } from "react-icons/bi";
-import Logo from "./images/slogo.png";
+import { RiParentFill, RiAwardFill } from 'react-icons/ri';
+import { BiBuildings, BiFootball } from "react-icons/bi";
 import image1 from "./images/classroom.jpg";
 import image2 from "./images/hallway.jpg";
 import image3 from "./images/dance.jpg";
@@ -18,40 +17,10 @@ class HomePageComponent extends Component {
     constructor(props) {
         super(props);
     }
-    getLoginForm=()=>{
-        this.props.history.push('/user')
-    }
     render() {
         return (
             <div className='page'>
-                <head>
-                    <meta charset="UTF-8"></meta>
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-                </head>
-                <div className="topbar">
-                    <a href=""><i><RiFacebookBoxFill /></i></a>
-                    <a href=""><i><RiInstagramLine /></i></a>
-                    <a href=""><i><RiLinkedinBoxFill /></i></a>
-                    <a href=""><i><RiYoutubeFill /></i></a>
-                </div>
                 <div className='home'>
-                    <div className="home-heading">
-                        <h1 >Mystic Falls High School</h1>
-                        <div className="home-logo">
-                            <a className="navbar-brand" href="/"><img src={Logo} alt="Error loading" width="120px" height="120px" /></a>
-                        </div>
-                    </div>
-                    <div className="topnav">
-                        <div className="topnav-left">
-                            <a href="/contact">Contact Us</a>
-                            <a href="/about">About Us</a>
-                            <a href="/infrastructure">Infrastructure</a>
-                            <a href="/academics">Academics</a>
-                            <a className="active" href="/">Home</a>
-                        </div>
-                        <button class="btn " onClick={this.getLoginForm}>Login/Register</button>
-                    </div>
                     <div className="slide">
                         <div id="carousel" className="carousel slide" data-bs-ride="carousel">
                             <ul class="carousel-indicators">
@@ -149,35 +118,6 @@ class HomePageComponent extends Component {
                             <p >MFHS has won several awards for providing world-class academic and co-curricular education facilities.</p>
                         </div>
                     </div>
-                    <div className="footer">
-                        <div className="box-container">
-                            <div className="box">
-                                <i className="footer-i1"><BiMap /></i>
-                                <h3 className="footer-h1">Address</h3>
-                                <p className="footer-p1">Mystic Falls High School, Study Town, Mystic Falls - 431603 Arizona, United States.</p>
-                                <strong>+91 9821907236</strong>
-                                <br />
-                                <a href="/"><strong>www.mfhs.ac.in</strong></a>
-                            </div>
-                            <div className="box">
-                                <i className="footer-i2"><BiLink /></i>
-                                <h3 className="footer-h2">Quick Links</h3>
-                                <a className="footer-a1" href="/about">About Us</a>
-                                <br />
-                                <a className="footer-a2" href="/academics">Academics</a>
-                                <br />
-                                <a className="footer-a3" href="/infraStructure">InfraStructure</a>
-                                <br />
-                                <a className="footer-a4" href="/contact">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="footer-bar">
-                    <a href="https://www.facebook.com/"><i><RiFacebookBoxFill /></i></a>
-                    <a href="https://www.instagram.com/"><i><RiInstagramLine /></i></a>
-                    <a href="https://www.linkedin.com/"><i><RiLinkedinBoxFill /></i></a>
-                    <a href="https://www.youtube.com/"><i><RiYoutubeFill /></i></a>
                 </div>
             </div>
         );

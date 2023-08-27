@@ -11,6 +11,14 @@ class ApiService{
     getPublicContent() {
         return axios.get(USER_API_BASE_URL + '/api/all', {headers: authHeader()})
     }
+
+    getAdminBoard() {
+        return axios.get(USER_API_BASE_URL + '/api/admin', {headers: authHeader()});
+    }
+
+    registerAdmin(admin){
+        return axios.post(""+USER_API_BASE_URL + '/user/signup/admin', admin);
+    }
 }
 
 export default new ApiService();

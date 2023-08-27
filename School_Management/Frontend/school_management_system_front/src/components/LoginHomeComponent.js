@@ -56,7 +56,7 @@ export default class LoginHomeComponent extends Component {
         return (
             <div>
                 <div>
-                    <nav className="">
+                    <nav className="navbar navbar-expand navbar-dark bg-dark">
                         <div>
                             <li className="nav-item">
                                 <Link to={"/home"} className="nav-link">

@@ -1,36 +1,11 @@
 import './Home.css';
-import Logo from "./images/slogo.png";
-import { RiFacebookBoxFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeFill } from 'react-icons/ri';
 import '../contact.css';
 import { BiLink } from "react-icons/bi";
 
 const ContactComponent = () => {
     return (
         <div>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-            <div className="topbar">
-                <a href="https://www.facebook.com/"><i><RiFacebookBoxFill /></i></a>
-                <a href="https://www.instagram.com/"><i><RiInstagramLine /></i></a>
-                <a href="https://www.linkedin.com/"><i><RiLinkedinBoxFill /></i></a>
-                <a href="https://www.youtube.com/"><i><RiYoutubeFill /></i></a>
-            </div>
-
             <div className="home">
-                <div className="home-heading">
-                    <h1 >Mystic Falls High School</h1>
-                    <div className="home-logo">
-                        <a className="navbar-brand" href="/"><img src={Logo} alt="Error loading" width="120px" height="120px" /></a>
-                    </div>
-                </div>
-                <div className="topnav">
-                    <div className="topnav-left">
-                        <a className="active" href="/contact">Contact Us</a>
-                        <a href="/about">About Us</a>
-                        <a href="/infrastructure">Infrastructure</a>
-                        <a href="/academics">Academics</a>
-                        <a href="/">Home</a>
-                    </div>
-                </div>
                 <div className="heading">
                     <div className="jumbotron"><h1>Contact Us</h1></div>
                 </div>
@@ -75,13 +50,6 @@ const ContactComponent = () => {
                     <a className="footer-a3" href="/infraStructure">InfraStructure</a>
                     <br />
                     <a className="footer-a4" href="/contact">Contact Us</a>
-                </div>
-
-                <div className="footer-bar">
-                    <a href="https://www.facebook.com/"><i><RiFacebookBoxFill /></i></a>
-                    <a href="https://www.instagram.com/"><i><RiInstagramLine /></i></a>
-                    <a href="https://www.linkedin.com/"><i><RiLinkedinBoxFill /></i></a>
-                    <a href="https://www.youtube.com/"><i><RiYoutubeFill /></i></a>
                 </div>
             </div>
         </div>

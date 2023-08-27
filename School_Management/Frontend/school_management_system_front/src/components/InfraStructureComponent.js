@@ -1,34 +1,10 @@
-import { RiFacebookBoxFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeFill } from 'react-icons/ri';
 import image2 from './images/classroom_teaching.jpg';
 import image1 from './images/library.jpg';
-import Logo from "./images/slogo.png";
 import '../infrastructure.css';
 const InfraStructureComponent = () => {
     return (
         <div>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-            <div className="topbar">
-                <a href="https://www.facebook.com/"><i><RiFacebookBoxFill /></i></a>
-                <a href="https://www.instagram.com/"><i><RiInstagramLine /></i></a>
-                <a href="https://www.linkedin.com/"><i><RiLinkedinBoxFill /></i></a>
-                <a href="https://www.youtube.com/"><i><RiYoutubeFill /></i></a>
-            </div>
             <div className="home">
-                <div className="home-heading">
-                    <h1 >Mystic Falls High School</h1>
-                    <div className="home-logo">
-                        <a className="navbar-brand" href="/"><img src={Logo} alt="Error loading" width="120px" height="120px" /></a>
-                    </div>
-                </div>
-                <div className="topnav">
-                    <div className="topnav-left">
-                        <a href="/contact">Contact Us</a>
-                        <a href="/about">About Us</a>
-                        <a className="active" href="/infrastructure">Infrastructure</a>
-                        <a href="/academics">Academics</a>
-                        <a href="/">Home</a>
-                    </div>
-                </div>
                 <div className="heading">
                     <div className="jumbotron"><h1>Infrastructure</h1></div>
                 </div>
@@ -48,12 +24,6 @@ const InfraStructureComponent = () => {
                         In order to attract young readers, the library space has been upgraded to create a better learning ambience and provide adequate space with bean bags and couches to collaborate, research, learn, share, read and relax.</p>
                     <img src={image1} alt="loading failed" />
                 </div>
-            </div>
-            <div className="footer-bar">
-                <a href="https://www.facebook.com/"><i><RiFacebookBoxFill /></i></a>
-                <a href="https://www.instagram.com/"><i><RiInstagramLine /></i></a>
-                <a href="https://www.linkedin.com/"><i><RiLinkedinBoxFill /></i></a>
-                <a href="https://www.youtube.com/"><i><RiYoutubeFill /></i></a>
             </div>
         </div>
     );

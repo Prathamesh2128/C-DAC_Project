@@ -31,7 +31,7 @@ class UserComponent extends Component {
                 showStudentBoard: user.roles.includes("ROLE_STUDENT"),
                 showTeacherBoard: user.roles.includes("ROLE_TEACHER"),
                 showParentBoard: user.roles.includes("ROLE_PARENT"),
-            })
+            });
         }
     }
 
