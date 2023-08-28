@@ -30,25 +30,4 @@ public class Role {
 	public Role(UserRoles name) {
 		this.userRole = name;
 	}
-
-	public Role() {
-		super();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public UserRoles getUserRole() {
-		return userRole;
-	}
-
-	public void setUserRole(UserRoles userRole) {
-		this.userRole = userRole;
-	}
-	
 }
