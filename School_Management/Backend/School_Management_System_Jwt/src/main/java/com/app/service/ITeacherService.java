@@ -13,4 +13,6 @@ public interface ITeacherService {
 	List<Teacher> getAllTeachers();
 	
 	Teacher getDetails(int teacherId);
+	
+	TeacherResponseDTO updateDetails(Teacher teacherRequest);
 }

@@ -62,4 +62,20 @@ public class TeacherServiceImpl implements ITeacherService{
 		
 		return teacherRepo.findById(teacherId).orElseThrow(() -> new UserHandlingException("Invalid User ID !!!!"));
 	}
+	
+	@Override
+	public TeacherResponseDTO updateDetails(Teacher teacherRequest) {
+		System.out.println("Teacher Request "+teacherRequest);
+		Teacher teacher = new Teacher();
+		BeanUtils.copyProperties(teacherRequest, teacher);
+		System.out.println("Teacher "+teacher);
+		teacher.setPassword(encoder.encode(teacherRequest.getPassword()));
+		teacher.setActive(true);
+		
+		teacher.setRoles(teacherRequest.getRoles());
+		TeacherResponseDTO teacherDTO = new TeacherResponseDTO();
+		BeanUtils.copyProperties(teacherRepo.save(teacher), teacherDTO);
+		System.out.println("Teacher response DTO "+teacherDTO);
+		return teacherDTO;
+	}
 }

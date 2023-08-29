@@ -44,4 +44,12 @@ public class TeacherController {
 		System.out.println("in get Teacher details " +id);
 		return ResponseEntity.ok(teacherService.getDetails(id));
 	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updateTeacherDetails(@RequestBody Teacher teacher, @PathVariable int id) {
+		System.out.println("in update Teacher " + teacher + " " + id);
+		Teacher existingTeacher = teacherService.getDetails(id);
+		System.out.println(existingTeacher);
+		return ResponseEntity.ok(teacherService.updateDetails(teacher));
+	}
 }
