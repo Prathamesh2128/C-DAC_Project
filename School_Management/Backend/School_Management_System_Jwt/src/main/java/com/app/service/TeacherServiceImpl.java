@@ -1,5 +1,6 @@
 package com.app.service;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.app.entities.Role;
 import com.app.entities.Teacher;
 import com.app.entities.UserRoles;
+import com.app.exception.UserHandlingException;
 import com.app.repository.RoleRepository;
 import com.app.repository.TeacherRepository;
 import com.app.request.TeacherSignupRequest;
@@ -49,4 +51,10 @@ public class TeacherServiceImpl implements ITeacherService{
 		System.out.println("Teacher response DTO "+teacherDTO);
 		return teacherDTO;
 	}
+	
+	@Override
+	public List<Teacher> getAllTeachers() {
+		return teacherRepo.findAll();
+	}	
+	
 }
