@@ -60,6 +60,12 @@ public class StudentServiceImpl implements IStudentService{
 	public List<Student> getAllStudents() {
 		return studentRepo.findAll();
 	}
+	
+	@Override
+	public Student getDetails(int studentId) {
+		return studentRepo.findById(studentId).orElseThrow(()-> new UserHandlingException("Invalid User ID !!!!"));
+	}
+	
 
 
 }

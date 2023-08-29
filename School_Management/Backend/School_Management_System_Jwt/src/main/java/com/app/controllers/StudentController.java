@@ -49,6 +49,10 @@ public class StudentController {
 		return studentService.getAllStudents();
 	}
 	
-	
+	@GetMapping("/{id}")
+	public ResponseEntity<?> getUserDetails(@PathVariable int id) {
+		System.out.println("in get Student details " +id);
+		return ResponseEntity.ok(studentService.getDetails(id));
+	}
 	
 }
