@@ -55,4 +55,14 @@ public class StudentController {
 		return ResponseEntity.ok(studentService.getDetails(id));
 	}
 	
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updateStudentDetails(@RequestBody Student student, @PathVariable int id) {
+		System.out.println("in update Student " + student + " " + id);
+		Student existingStudent = studentService.getDetails(id);
+		System.out.println(existingStudent);
+		return ResponseEntity.ok(studentService.updateDetails(student));
+	}
+	
+	
+	
 }

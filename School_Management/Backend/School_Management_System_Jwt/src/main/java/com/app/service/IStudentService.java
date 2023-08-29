@@ -11,5 +11,7 @@ public interface IStudentService {
 	StudentResponseDTO registerStudent(StudentSignupRequest studentRequest);
 	List<Student> getAllStudents();
 	Student getDetails(int studentId);
+	StudentResponseDTO updateDetails(Student studentRequest);
+
 
 }

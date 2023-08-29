@@ -66,6 +66,21 @@ public class StudentServiceImpl implements IStudentService{
 		return studentRepo.findById(studentId).orElseThrow(()-> new UserHandlingException("Invalid User ID !!!!"));
 	}
 	
+	@Override
+	public StudentResponseDTO updateDetails(Student studentRequest) {
+		System.out.println("student request"+studentRequest);
+		Student student = new Student();
+		BeanUtils.copyProperties(studentRequest, student);
+		student.setPassword(encoder.encode(studentRequest.getPassword()));
+		
+		student.setActive(true);
+		System.out.println("student " + student);
+		StudentResponseDTO studentDTO = new StudentResponseDTO();
+		BeanUtils.copyProperties(studentRepo.save(student), studentDTO);
+		System.out.println("student resp dto " + studentDTO);
+		return studentDTO;
+	}
+	
 
 
 }
