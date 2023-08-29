@@ -11,4 +11,6 @@ public interface ITeacherService {
 	TeacherResponseDTO registerTeacher(TeacherSignupRequest teacherRequest);
 	
 	List<Teacher> getAllTeachers();
+	
+	Teacher getDetails(int teacherId);
 }

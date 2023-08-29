@@ -57,4 +57,9 @@ public class TeacherServiceImpl implements ITeacherService{
 		return teacherRepo.findAll();
 	}	
 	
+	@Override
+	public Teacher getDetails(int teacherId) {
+		
+		return teacherRepo.findById(teacherId).orElseThrow(() -> new UserHandlingException("Invalid User ID !!!!"));
+	}
 }

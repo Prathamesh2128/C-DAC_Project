@@ -39,4 +39,9 @@ public class TeacherController {
 		return teacherService.getAllTeachers();
 	}
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<?> getTeacherDetails(@PathVariable int id) {
+		System.out.println("in get Teacher details " +id);
+		return ResponseEntity.ok(teacherService.getDetails(id));
+	}
 }
