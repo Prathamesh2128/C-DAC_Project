@@ -81,6 +81,10 @@ public class StudentServiceImpl implements IStudentService{
 		return studentDTO;
 	}
 	
-
+	@Override
+	public String deleteStudent(int studentId) {
+		studentRepo.deleteById(studentId);
+		return "User details deleted for id: " + studentId;
+	}
 
 }

@@ -63,6 +63,11 @@ public class StudentController {
 		return ResponseEntity.ok(studentService.updateDetails(student));
 	}
 	
+	@DeleteMapping("/{studentId}")
+	public ResponseEntity<String> deleteStudentDetails(@PathVariable int studentId) {
+		System.out.println("in delete Student details " + studentId);
+		return ResponseEntity.ok(studentService.deleteStudent(studentId));
+	}
 	
 	
 }
