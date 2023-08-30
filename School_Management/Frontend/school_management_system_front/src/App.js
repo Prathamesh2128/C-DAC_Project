@@ -1,43 +1,59 @@
 import './App.css';
+import '../src/Home.css';
+
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import HomePageComponent from './components/Home';
-import UserComponent from './components/user/UserComponent';
-import Login from './components/user/LoginUserComponent';
-import LoginHomeComponent from './components/LoginHomeComponent';
-import AcademicsComponent from './components/AcademicsComponent';
-import InfraStructureComponent from './components/InfraStructureComponent';
-import AboutComponent from './components/AboutComponent';
-import ContactComponent from './components/ContactComponent';
-import ProfileComponent from './components/ProfileComponent';
-import AdminComponent from './components/admin/AdminComponent';
-import RegisterAdminComponent from './components/admin/RegisterAdminComponent';
-import '../src/components/Home.css'
-import Header from './components/Header';
-import Footer from './components/Footer';
+
+
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+
+import HomeComponent from './Components/Home/HomeComponent';
+import AcademicsComponent from './Components/Academics/AcademicsComponent';
+import InfraStructureComponent from './Components/InfraStructure/InfraStructureComponent';
+import AboutComponent from './Components/About/AboutComponent';
+import ContactComponent from './Components/Contact/ContactComponent';
+import UserComponent from './Components/User/UserComponent';
+import LoginComponent from './Components/User/LoginComponent';
+import LoginHomeComponent from './Components/User/LoginHomeComponent';
+import UserProfileComponent from './Components/User/UserProfileComponent';
+import AdminComponent from './Components/Admin/AdminComponent';
+import RegisterAdminComponent from './Components/Admin/RegisterAdminComponent';
+import RegisterTeacherComponent from './Components/Admin/RegisterTeacherComponent';
+import RegisterStudentComponent from './Components/Admin/RegisterStudentComponent';
+import StudentListComponent from './Components/Admin/StudentListComponent';
+import TeacherListComponent from './Components/Admin/TeacherListComponent';
+import StudentComponent from './Components/Student/StudentComponent';
+import TeacherComponent from './Components/Teacher/TeacherComponent';
 
 const App = () => {
-    return (
-      <div >
-        <Header />
-        <Router>
-          <Switch>
-            <Route path="/" exact component={HomePageComponent} />
-            <Route path="/academics" component={AcademicsComponent} />
-            <Route path="/infrastructure" component={InfraStructureComponent} />
-            <Route path="/about" component={AboutComponent} />
-            <Route path="/contact" component={ContactComponent} />
-            <Route path="/user" component={UserComponent} />
-            <Route path="/api/signin" component={Login} />
-            <Route path="/home" exact component={LoginHomeComponent} />
-            <Route path="/profile" component={ProfileComponent} />
-            <Route path="/admin" component={AdminComponent} />
-            <Route path="/admin/register" component={RegisterAdminComponent} />
-          </Switch>
-        </Router>
-        <Footer></Footer>
-      </div>
-    )
+  return (
+    <div >
+      <Header />
+      <Router>
+        <Switch>
+          <Route path="/" exact component={HomeComponent} />
+          <Route path="/academics" component={AcademicsComponent} />
+          <Route path="/infrastructure" component={InfraStructureComponent} />
+          <Route path="/about" component={AboutComponent} />
+          <Route path="/contact" component={ContactComponent} />
+          <Route path='/user' exact component={UserComponent} />
+          <Route path='/api/signin' component={LoginComponent} />
+          <Route path='/home' component={LoginHomeComponent} />
+          <Route path="/profile" component={UserProfileComponent} />
+          <Route path="/admin" component={AdminComponent} />
+          <Route path="/student" component={StudentComponent} />
+          <Route path="/teacher" component={TeacherComponent} />
+          <Route path="/register" component={RegisterAdminComponent} />
+          <Route path="/add-teacher" component={RegisterTeacherComponent} />
+          <Route path="/add-user" component={RegisterStudentComponent} />
+          <Route path="/list" component={StudentListComponent} />
+          <Route path="/list-t" component={TeacherListComponent} />
+        </Switch>
+      </Router>
+      <Footer></Footer>
+    </div>
+  )
 }
 
 export default App;
