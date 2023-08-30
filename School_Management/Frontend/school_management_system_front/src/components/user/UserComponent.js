@@ -49,11 +49,6 @@ class UserComponent extends Component {
                             
                         </Link>
                         <div className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link to={"/user"} className="nav-link">
-                                    Home
-                                </Link>
-                            </li>
 
                             {showTeacherBoard && (
                                 <li className="nav-item">
@@ -86,9 +81,6 @@ class UserComponent extends Component {
                                     </Link>
                                 </li>
                             )}
-                        </div>
-                        <div className="navbar-brand mr-0">
-                            <h1>Mystic Falls High School</h1>
                         </div>
                         {currentUser ? (
                             <div className="navbar-nav ml-auto">

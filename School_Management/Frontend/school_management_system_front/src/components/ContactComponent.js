@@ -1,6 +1,5 @@
 import './Home.css';
 import '../contact.css';
-import { BiLink } from "react-icons/bi";
 
 const ContactComponent = () => {
     return (
@@ -28,28 +27,10 @@ const ContactComponent = () => {
                                     <input type="text" placeholder="Message" id="message" name="message" className="form-control" />
                                 </div>
                                 <button className="btn btn-success" >Submit Now</button>
+                                <p></p>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="footer">
-                    <h3 className="footer-h1">Address</h3>
-                    <p className="footer-p1">Mystic Falls High School, Study Town, Mystic Falls - 431603 Arizona, United States.</p>
-                    <div className="footer-1">
-                        <strong>+91 9011027212</strong>
-                        <br />
-                        <a href="#"><strong>www.mfhs.ac.in</strong></a>
-                    </div>
-                    <i className="footer-i2"><BiLink /></i>
-                    <h3 className="footer-h2">Quick Links</h3>
-                    <a className="footer-a1" href="/about">About Us</a>
-                    <br />
-                    <a className="footer-a2" href="/academics">Academics</a>
-                    <br />
-                    <a className="footer-a3" href="/infraStructure">InfraStructure</a>
-                    <br />
-                    <a className="footer-a4" href="/contact">Contact Us</a>
                 </div>
             </div>
         </div>

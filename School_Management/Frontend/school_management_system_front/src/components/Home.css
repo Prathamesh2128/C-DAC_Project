@@ -250,3 +250,9 @@
     margin-top: 10px;
 }
 
+.header-username {
+    color: red;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: right;
+}

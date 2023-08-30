@@ -1,16 +1,20 @@
 import './Home.css';
 import { RiFacebookBoxFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeFill } from 'react-icons/ri';
 import Logo from "./images/slogo.png";
-import { Component } from 'react';
-
-class Header extends Component {
-    constructor(props){
-        super(props)
-    }
-    getLoginForm = () => {
-        this.props.history.push('/user')
-    }
-    render() {
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+const Header = () => {
+    const [userName, setUserName] = useState("");
+    useEffect(() => {
+        const userinfo = sessionStorage.getItem("userinfo");
+        if(userinfo != null ){
+            setUserName((JSON.parse(sessionStorage.getItem("userinfo"))).userName)
+        }
+        else {
+            setUserName("");
+          }
+    }, []);
         return (
             <div className='home'>
                 <div className="topbar">
@@ -27,17 +31,30 @@ class Header extends Component {
                 </div>
                 <div className="topnav">
                     <div className="topnav-left">
-                        <a href="/contact">Contact Us</a>
-                        <a href="/about">About Us</a>
-                        <a href="/infrastructure">Infrastructure</a>
-                        <a href="/academics">Academics</a>
-                        <a className="active" href="/">Home</a>
+                        <Link to={"/contact"} >
+                            Contact Us
+                        </Link>
+                        <Link to="/about" >
+                            About Us
+                        </Link>
+                        <Link to="/infrastructure" >
+                            Infrastructure
+                        </Link>
+                        <Link to="/academics">
+                            Academics
+                        </Link>
+                        <Link to="/" className="active">
+                            Home
+                        </Link>
                     </div>
-                    <button class="btn " onClick={this.getLoginForm}>Login/Register</button>
+                    <div>
+                        <Link to="/user">
+                            Login/Register
+                        </Link>
+                    </div>
                 </div>
             </div>
         );
-    }
 }
 
 export default Header;

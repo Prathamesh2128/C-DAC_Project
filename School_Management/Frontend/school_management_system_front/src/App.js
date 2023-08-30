@@ -16,21 +16,20 @@ import '../src/components/Home.css'
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div >
-        <Header></Header>
+        <Header />
         <Router>
           <Switch>
             <Route path="/" exact component={HomePageComponent} />
-            <Route path="/user" component={UserComponent} />
-            <Route path="/api/signin" component={Login} />
-            <Route path="/home" exact component={LoginHomeComponent} />
             <Route path="/academics" component={AcademicsComponent} />
             <Route path="/infrastructure" component={InfraStructureComponent} />
             <Route path="/about" component={AboutComponent} />
             <Route path="/contact" component={ContactComponent} />
+            <Route path="/user" component={UserComponent} />
+            <Route path="/api/signin" component={Login} />
+            <Route path="/home" exact component={LoginHomeComponent} />
             <Route path="/profile" component={ProfileComponent} />
             <Route path="/admin" component={AdminComponent} />
             <Route path="/admin/register" component={RegisterAdminComponent} />
@@ -39,7 +38,6 @@ class App extends Component {
         <Footer></Footer>
       </div>
     )
-  }
 }
 
 export default App;
