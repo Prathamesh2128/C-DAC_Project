@@ -25,6 +25,7 @@ import StudentListComponent from './Components/Admin/StudentListComponent';
 import TeacherListComponent from './Components/Admin/TeacherListComponent';
 import StudentComponent from './Components/Student/StudentComponent';
 import TeacherComponent from './Components/Teacher/TeacherComponent';
+import EditStudentComponent from './Components/Admin/EditStudentComponent';
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/add-user" component={RegisterStudentComponent} />
           <Route path="/list" component={StudentListComponent} />
           <Route path="/list-t" component={TeacherListComponent} />
+          <Route path="/edit-user" component={EditStudentComponent} />
         </Switch>
       </Router>
       <Footer></Footer>

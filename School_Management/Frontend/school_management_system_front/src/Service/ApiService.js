@@ -30,7 +30,7 @@ class ApiService {
     }
 
     addStudent(student) {
-        return axios.post(""+USER_API_BASE_URL + "/user/signup/student", student);
+        return axios.post(""+USER_API_BASE_URL + "/student/signup", student);
     }
 
     getStudentList() {
@@ -38,15 +38,15 @@ class ApiService {
     }
 
     fetchStudentById(studentId) {
-        return axios.get(USER_API_BASE_URL + "/user/student/" +studentId);
+        return axios.get(USER_API_BASE_URL + "/student/" +studentId);
     }
 
     editStudent(student) {
-        return axios.put(USER_API_BASE_URL + '/user/student/' + student.id, student);
+        return axios.put(USER_API_BASE_URL + '/student/' + student.id, student);
     }
 
     deleteStudent(studentId) {
-        return axios.delete(USER_API_BASE_URL + '/user/student/ '+ studentId);
+        return axios.delete(USER_API_BASE_URL + '/student/ '+ studentId);
     }
 
     addTeacher(teacher) {
