@@ -26,7 +26,11 @@ import TeacherListComponent from './Components/Admin/TeacherListComponent';
 import StudentComponent from './Components/Student/StudentComponent';
 import TeacherComponent from './Components/Teacher/TeacherComponent';
 import EditStudentComponent from './Components/Admin/EditStudentComponent';
-
+import EditTeacherComponent from './Components/Admin/EditTeacherComponent';
+import FeedbackComponent from './Components/Student/FeedbackComponent';
+import TeachersStudentListComponent from './Components/Teacher/TeachersStudentListComponent';
+import UpdateAttendanceComponent from './Components/Teacher/UpdateAttendanceComponent';
+import AddFeedbackComponent from './Components/Teacher/AddFeedbackComponent';
 const App = () => {
   return (
     <div >
@@ -51,6 +55,11 @@ const App = () => {
           <Route path="/list" component={StudentListComponent} />
           <Route path="/list-t" component={TeacherListComponent} />
           <Route path="/edit-user" component={EditStudentComponent} />
+          <Route path="/edit-teacher" component={EditTeacherComponent} />
+          <Route path="/feedbackDetails" component={FeedbackComponent} />
+          <Route path="/stlist" component={TeachersStudentListComponent} />
+          <Route path="/update-attendance" component={UpdateAttendanceComponent} />
+          <Route path="/feedback" component={AddFeedbackComponent} />
         </Switch>
       </Router>
       <Footer></Footer>
